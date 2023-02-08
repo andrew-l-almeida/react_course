@@ -6,6 +6,9 @@ import { useState } from 'react'
 
 const Expenses = props => {
     const [selectedYear, setSelectedYear] = useState('2021')
+    const newFilteredExpenses = props.expenses.filter(expense => {
+        return expense.date.getFullYear().toString() === selectedYear
+    });
     const dateHandler = (year) => {
         setSelectedYear(year)
     }
@@ -13,7 +16,8 @@ const Expenses = props => {
         <div>
             <Card className="expenses">
                 <ExpensesFilter selected ={selectedYear} onSelectDate={dateHandler}/>
-                {props.expenses.map(expense => {
+                
+                {newFilteredExpenses.map(expense => {
                     return <ExpenseItem key={expense.id} title={expense.title} amount={expense.amount} date={expense.date} />
                 })}
             </Card>
