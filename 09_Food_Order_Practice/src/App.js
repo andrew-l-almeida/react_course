@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import Header from "./Layouts/Header";
-import Meals from "./Meals/Meals";
+import Header from "./Components/Layouts/Header";
+import Meals from "./Components/Meals/Meals";
 
 function App() {
   return (
