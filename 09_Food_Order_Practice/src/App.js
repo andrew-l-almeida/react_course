@@ -1,10 +1,14 @@
 import { Fragment } from "react";
 import Header from "./Layouts/Header";
+import Meals from "./Meals/Meals";
 
 function App() {
   return (
     <Fragment>
       <Header />
+      <main>
+        <Meals />
+      </main>
     </Fragment>
   );
 }
